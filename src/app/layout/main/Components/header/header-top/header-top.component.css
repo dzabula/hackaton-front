@@ -1,0 +1,40 @@
+@media (max-width: 767px) {
+
+    .top-header{
+        display: none !important;
+    }
+}
+@media (max-width: 1092px) {
+
+    .main-menu__social{
+        margin-right: 0px !important;
+        padding-right: 0px !important;
+
+    }
+    .top-header{
+        display: none !important;
+    }
+}
+.top-header{
+    z-index: 999;
+}
+.mail{
+    color:var(--najjaca-roza) !important; 
+    font-size: 12px !important
+}
+.mail:hover{
+    color: var(--jaka-roza)!important;
+    /* border-bottom: 1px solid #cd8c66; */
+}
+.social-icon{
+    color:var(--najjaca-roza);
+}
+.main-header__top-inner{
+    border-bottom: 1px solid var(--jaka-roza) !important;
+}
+.header-phone-icon{
+    font-size: 14px !important;
+}
+.header-social-icon{
+    font-size: 15px !important;
+}

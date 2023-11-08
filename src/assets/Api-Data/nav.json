@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Pocetna",
+        "link":"/"
+    },
+    {
+        "name":"Svi apartmani",
+        "link":"apartments"
+    },
+    {
+        "name":"Kontakt",
+        "link":"contact"
+    },
+    {
+        "name":"O nama",
+        "link":"aboutus"
+    },
+    {
+        "name":"Log In",
+        "link":"login"
+    },
+    {
+        "name":"Registracija",
+        "link":"registration"
+    }
+]

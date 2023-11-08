@@ -1,0 +1,49 @@
+.owl-item{
+    max-width: 25% !important;
+}
+.color-white{
+    color:white !important;
+}
+.font-22{
+    font-size: 22px;
+}
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #673ab7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .title-economic{
+    font-size: 26px !important;
+  }
+  .economic-container{
+    
+    height: -webkit-fill-available !important;
+  }
+  .bg-krem2{
+    background-color: var(--roze-krem2) !important;
+  }
+  .economic_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    mix-blend-mode: luminosity;
+    opacity: .15;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    z-index: -1;
+    /*background-image: url("../../../../../assets/images/3rwpRhR1BZUZ.jpg");*/
+    background-image:none !important;
+
+  }

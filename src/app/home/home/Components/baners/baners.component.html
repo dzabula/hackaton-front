@@ -1,0 +1,97 @@
+<!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1LcTCnK_2RlHNL9INFB2MK-F3j5ozQaI&ehbc=2E312F&noprof=1" width="100%" margin-top="300px" height="600"></iframe> -->
+<!-- <iframe width="100%" height="650" class="mt-100" src="https://www.openstreetmap.org/export/embed.html?bbox=20.454920232295994%2C44.81716666826472%2C20.45846074819565%2C44.81882575578543&amp;layer=mapnik&amp;marker=44.81799621799222%2C20.45669049024582" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=44.81800&amp;mlon=20.45669#map=19/44.81800/20.45669">Погледај већу карту</a></small> -->
+
+<div class="map-container">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+    <div id="map-overlay" class="animated-marker wow slideInLeft animated" data-wow-delay="100ms" data-wow-duration="2500ms">
+        <h1 class="uppercase title">Paradise</h1>
+        <h2 class="uppercase subtitle">Najbolji apartmani u beogradu</h2>
+        <div class="w-100">
+            <form [formGroup]="searchForm">
+
+                <div class="form-row w-100">
+                    <mat-form-field class="w-100">
+                      <mat-label>Broji osoba:</mat-label>
+                      <mat-select placeholder="Broji osoba" formControlName="numPerson"  >
+                        <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Od:</mat-label>
+                        <input  matInput [matDatepicker]="dateStartPicker" [(ngModel)]="start" [min]="minStartDate" formControlName="start"
+                                (dateChange)="onDateStartChange()" formControlName="start"/>
+                        <mat-datepicker-toggle matSuffix [for]="dateStartPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dateStartPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-row w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Do:</mat-label>
+                        <input  matInput [matDatepicker]="dateEndPicker" [(ngModel)]="end"
+                                [min]="minEndDate" formControlName="end"   formControlName="end"/>
+                        <mat-datepicker-toggle matSuffix [for]="dateEndPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dateEndPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-buttons buttons w-25 d-flex justify-content-center">
+                      <button mat-raised-button color="light" class=" bg-white color-jaka-roza mx-auto " (click)="search()">Pretraga</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <section class="main-slider clearfix">
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+        "effect": "fade",
+        "pagination": {
+        "el": "#main-slider-pagination",
+        "type": "bullets",
+        "clickable": true
+        },
+        "navigation": {
+        "nextEl": "#main-slider__swiper-button-next",
+        "prevEl": "#main-slider__swiper-button-prev"
+        },
+        "autoplay": {
+        "delay": 5000
+        }}'>
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" *ngFor="let banner of banners;">
+                <div class="image-layer" style="background-image: url(/assets/images/{{banner.image}});"></div>
+    
+                <div class="main-slider__overly"></div>
+                <div class="container pickuptext">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider__content">
+                                <h2 class="main-slider__title">{{banner.title | uppercase}}</h2>
+                                <h4 class="main-slider__sub-title"><a class="color-white" routerLink="/apartments"><span>Pogledaj Ponudu</span></a>{{banner.subtitle | titlecase}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-slider__nav">
+            <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                <i class="icon-left-arrow"></i>
+            </div>
+            <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                <i class="icon-right-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</section> -->

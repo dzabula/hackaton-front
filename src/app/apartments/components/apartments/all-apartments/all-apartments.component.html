@@ -1,0 +1,42 @@
+
+
+
+<div data-elementor-type="wp-page" data-elementor-id="436" class="elementor elementor-436">
+    <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-a1f3d99 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default"
+        data-id="a1f3d99" data-element_type="section"
+        data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+        <div class="elementor-container elementor-column-gap-no">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-957ebb1"
+                data-id="957ebb1" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-7c326a0 elementor-widget elementor-widget-alipes-apartment"
+                        data-id="7c326a0" data-element_type="widget" data-widget_type="alipes-apartment.default">
+                        <div class="elementor-widget-container">
+                            <!--Apartment Two Start-->
+                            <section class="apartment-two mt-2 pt-2">
+                                <div class="container">
+                                    <div class="row">
+                                        <!--Apartment Two Single Start-->
+
+                                                <ng-container *ngFor="let apartment of items">
+                                                    <!-- <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms"> -->
+                                                    <div class="col-12 col-lg-4  offset-lg-0 wow fadeInUp apartment-container  d-flex justify-content-center" data-wow-delay="100ms">
+
+                                                        <app-single-apartment class="w-100" [data]="apartment"></app-single-apartment>
+
+                                                    </div>  
+                                                </ng-container>
+
+                                    </div>
+
+                                </div>
+                            </section>
+                            <!--Apartment Two End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

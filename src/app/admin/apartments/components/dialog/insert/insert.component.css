@@ -1,0 +1,67 @@
+.card-specprice-fields{
+    width: 80%;
+    margin:0 auto;
+}
+mat-form-field{
+    width: 80%;
+    margin: 0 auto;
+}
+#edit{
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.form-row{
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 15px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.margin-right-50{
+    margin-right: 50px;
+}
+.color-white{
+    color:white !important;
+}
+.image-container {
+    display: flex;
+    align-items: center;
+}
+
+.left-image {
+width: 200px; /* Prilagodite veličinu slike prema potrebama */
+}
+
+.right-content {
+margin-left: auto;
+display: flex;
+align-items: center;
+gap: 16px; /* Prilagodite razmak između checkboxova prema potrebama */
+}
+
+.checkbox {
+margin-bottom: 0;
+}
+.h-250{
+    height: 250px !important;
+}
+
+.h-200{
+    height: 400px !important;
+}
+
+.angular-editor-toolbar-set{
+    height: 30px !important;
+}
+.description-container{
+    width: 80%;
+    margin: 0 auto;
+}
+.angular-editor-textarea{
+    max-height: 125px !important;
+    margin-bottom: 75px !important;
+}

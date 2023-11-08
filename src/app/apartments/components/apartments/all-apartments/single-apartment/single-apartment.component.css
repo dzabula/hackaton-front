@@ -1,0 +1,146 @@
+.font-price{
+    font-size: 20px !important;
+}
+.font-medium{
+    padding:10px !important;
+    font-size: 23px !important;
+}
+.border-right{
+    border-right: solid 1px #fff;
+}
+@media (min-width: 1024px) {
+    .font-medium{
+        padding:12px !important;
+
+        font-size: 27px !important;
+    }
+
+ }
+/*@media (max-width: 1124px) {
+
+    .fixed-width{
+        width: 450px !important;
+    }
+}
+@media (max-width: 768px) {
+
+    .fixed-width{
+        width: 400px !important;
+    }
+}
+@media (max-width: 525px) {
+
+    .fixed-width{
+        width: 350px !important;
+    }
+}
+@media (max-width: 425px) {
+
+    .fixed-width{
+        width: 300px !important;
+    }
+}
+@media (max-width: 380px) {
+
+    .fixed-width{
+        width: 270px !important;
+    }
+} */
+@media (max-width: 1200px) {
+    .title{
+        font-size: 15px !important;
+    }
+    .subtitle{
+        font-size: 14px !important;
+    }
+}
+@media (max-width: 992px) {
+    .title{
+        font-size: 18px !important;
+    }
+    .subtitle{
+        font-size: 17px !important;
+    }
+    .image-content img {
+         bottom: 0px !important;
+    }
+}
+.right-0{
+    right: 0px !important;
+}
+/* .fixed-width{
+    width: 500px;
+} */
+.fixed-width{
+    width: 100%;
+}
+.image-container {
+    
+    height: 200px; /* Fiksna visina div-a */
+    overflow: hidden; /* Skrivanje sadržaja koji prelazi granice div-a */
+  }
+  
+  .image-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-content img {
+    position: absolute !important;
+    /* bottom: 0px !important; */
+    width: auto;
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    top:0px;
+    object-fit: cover; /* Zumiranje i/ili pozicioniranje slike */
+  }
+.features-block{
+    border-right:1px solid var(--booking-gray) ;
+    border-top: 1px solid var(--booking-gray);
+    border-bottom: 1px solid var(--booking-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #f9f9f9;
+    padding: 10px 0;
+}
+.features-block i:first-child {
+    font-size: 18px;
+}
+.color-black{
+    color:var(--alipes-black) !important;
+}
+.features-block:hover{
+    background-color: var(--alipes-black);
+}
+.features-block:before{
+    background-color: var(--alipes-base) !important;
+}
+.features{
+    margin-bottom: 0px !important;
+    margin-left: 15px;
+    font-size: 18px;
+    color: var(--jaka-roza);
+}
+.left-border{
+    border-left:1px solid var(--booking-gray) ;
+}
+.subtitle{
+    font-size: 18px;
+}
+.title{
+    font-size: 19px;
+}
+.mb-12{
+    margin-bottom: 12px !important;
+}
+.cardd{
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.img-of-card{
+    border-radius: 15px 15px 0 0 !important;
+}

@@ -1,0 +1,56 @@
+<div class="container mt-5 w-75 mx-auto  ">
+    
+    <!-- <mat-card class="mt-5 my-card"> -->
+      <!-- <mat-card-title class="py-4">Registracija</mat-card-title> -->
+      <!-- <mat-card-content> -->
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form-container py-5 px-5 forma">
+        <h1 class="text-center mb-3 gray-color">Registrujte se!</h1>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Ime" formControlName="firstName" required>
+          <mat-error *ngIf="registrationForm.contains('firstName') &&  registrationForm.controls['firstName']?.hasError('pattern')">Ime mora imati prvo slovo veliko, i imati minimum dva slova</mat-error>
+          <mat-error *ngIf="registrationForm.contains('firstName') &&  registrationForm.controls['firstName']?.hasError('required')">Ime je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Prezime" formControlName="lastName" required>
+          <mat-error *ngIf="registrationForm.contains('lastName') &&  registrationForm.controls['lastName']?.hasError('pattern')">Prezime mora imati prvo slovo veliko, i imati minimum dva slova</mat-error>
+          <mat-error *ngIf="registrationForm.contains('lastName') &&  registrationForm.controls['lastName']?.hasError('required')">Prezime je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Email" type="email" formControlName="email" required>
+          <mat-error *ngIf="registrationForm.contains('email') &&  registrationForm.controls['email']?.hasError('email')">Email mora biti u formatu tekst@primer.com</mat-error>
+          <mat-error *ngIf="registrationForm.contains('email') &&  registrationForm.controls['email']?.hasError('required')">Email je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Telefon" type="tel" formControlName="phone" required>
+          <mat-error *ngIf="registrationForm.contains('phone') &&  registrationForm.controls['phone']?.hasError('pattern')">Telefon mora biti u formatu npr. +3816111111</mat-error>
+          <mat-error *ngIf="registrationForm.contains('phone') &&  registrationForm.controls['phone']?.hasError('required')">Email je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Lozinka" type="password" formControlName="password" required>
+          <mat-error *ngIf="registrationForm.contains('password') &&  registrationForm.controls['password']?.hasError('pattern')">Lozinka mora sadržati min. 8 karaktera! Min. jedno veliko slovo i min. jedan broji!</mat-error>
+          <mat-error *ngIf="registrationForm.contains('password') &&  registrationForm.controls['password']?.hasError('required')">Email je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mt-3">
+        <mat-form-field>
+          <input matInput placeholder="Potvrda lozinke" type="password" formControlName="confirmPassword" required>
+          <mat-error *ngIf="registrationForm.get('confirmPassword').invalid && registrationForm.get('confirmPassword').touched">
+            Lozinke se ne podudaraju.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button class="button-bg-color-1 color-white" type="submit" [disabled]="registrationForm.invalid"
+      [ngStyle]="{'background-color': registrationForm.invalid ? 'lightgray' : ''}">Registruj se</button>
+      <p class="danger reg-error">{{registrationError}}</p>
+    </form>
+
+</div>

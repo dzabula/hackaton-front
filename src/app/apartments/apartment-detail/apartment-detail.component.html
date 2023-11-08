@@ -1,0 +1,37 @@
+<div *ngIf="details">
+    <app-cover [firstWord]="firstWord" [bigText]="details.title" [smallText]="smallText"></app-cover>
+
+    <section class="apartment-details-one pb-0 pt-0">
+        <div class="container blago-siva-narandzasta py-3 relative-properties">
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="apartment-title-div py-3">
+                        <p class="apartment-title">{{apartment.title}}</p>
+                    </div>
+                    <app-gallery [isLoadedGalery]="isLoadedGalery" [images]="images" [thumb]="details.file"></app-gallery>
+                    <app-additional-lines [description]="details.description" [name]="details.title"></app-additional-lines>
+                    <app-central-content [data]="details"></app-central-content>
+                </div>
+            </div>
+
+            <app-map [mapString]="mapString"></app-map>
+            <app-comments [idApartment]="id" (replyAdded)="onCommentAdded($event)" [appUser]="appUser" [comments]="comments"></app-comments>
+            <ng-container *ngIf="isLogedIn; else elseBlock">
+                <app-rate [rates]="rates" [apartmentId]="id"></app-rate>
+                <app-add-coments (commentAdded)="onCommentAdded($event)" [id]="id"></app-add-coments>
+            </ng-container>
+            <ng-template #elseBlock>
+                <section class="pb-4 pt-2">
+                    <h3 class="jaka-roza">Ulogujte se kako biste mogli da ocenite apartman i ostavite komentar. <a routerLink="/login" class="slaba-roza">Log In</a></h3>
+                </section>
+            </ng-template>
+            
+           
+        </div>
+    </section>
+    <button (click)="OpenReservationDialog()" mat-fab color="" class="z-1000 fixed-button button-bg-color-1">
+        <mat-icon > Rezerviši sada</mat-icon>
+      </button>
+   
+    </div>

@@ -1,0 +1,11 @@
+.sticky{
+    position: sticky !important;
+}
+app-footer{
+    margin-top: 50px;
+    position: relative;
+    bottom: 0px;
+}
+app-header{
+    
+}

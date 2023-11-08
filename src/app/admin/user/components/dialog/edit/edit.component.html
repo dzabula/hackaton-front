@@ -1,0 +1,51 @@
+<section id="edit" class="py-2 z-999">
+    <h2 class="text-center pb-2">Izmena Korisnika</h2>
+    <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field>
+            <mat-label>Ime</mat-label>
+          <input matInput placeholder="Ime" formControlName="firstName" required>
+          <mat-error *ngIf="editUserForm.contains('firstName') &&  editUserForm.controls['firstName']?.hasError('pattern')">Ime mora imati prvo slovo veliko, i imati minimum dva slova</mat-error>
+          <mat-error *ngIf="editUserForm.contains('firstName') &&  editUserForm.controls['firstName']?.hasError('required')">Ime je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field>
+            <mat-label>Prezime</mat-label>
+          <input matInput placeholder="Prezime" formControlName="lastName" required>
+          <mat-error *ngIf="editUserForm.contains('lastName') &&  editUserForm.controls['lastName']?.hasError('pattern')">Prezime mora imati prvo slovo veliko, i imati minimum dva slova</mat-error>
+          <mat-error *ngIf="editUserForm.contains('lastName') &&  editUserForm.controls['lastName']?.hasError('required')">Prezime je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field>
+            <mat-label>Telefon</mat-label>
+          <input matInput placeholder="Telefon" formControlName="phone" required>
+          <mat-error *ngIf="editUserForm.contains('phone') &&  editUserForm.controls['phone']?.hasError('pattern')">Telefon mora biti u formatu: +3816111111</mat-error>
+          <mat-error *ngIf="editUserForm.contains('phone') &&  editUserForm.controls['phone']?.hasError('required')">Telefon je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" required>
+          <mat-error *ngIf="editUserForm.contains('email') &&  editUserForm.controls['email']?.hasError('email')">Email mora biti u formatu tekst@primer.com</mat-error>
+          <mat-error *ngIf="editUserForm.contains('email') &&  editUserForm.controls['email']?.hasError('required')">Email je obavezno polje</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <p class="color-red">{{editError}}</p>
+      </div>
+      <div class="form-buttons buttons">
+        
+            <button mat-raised-button color="light" class="margin-right-50 bg-success color-white " type="submit" [disabled]="editUserForm.invalid">Sačuvaj</button>
+            
+            <button mat-raised-button color="warn" type="button" (click)="close()">Odustani</button>  
+        
+      </div>
+    </form>
+    </section>

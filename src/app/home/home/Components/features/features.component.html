@@ -1,0 +1,23 @@
+<div class="counter-one">
+    <div class="counter-one__bg float-bob-x" style="background-image: url(/assets/images/3H59l3n7299b.png);"></div>
+    <div class="container">
+        <div class="row">
+     
+            <div *ngFor="let item of features" class="col-xl-4 col-lg-4 col-md-12 wow fadeInUp"  data-wow-delay="100ms">
+                <div class="counter-one__single">
+                    <div class="counter-one__top">
+                        <div class="counter-one__shape"></div>
+                        <div class="counter-one__icon">
+                            <span class="{{item.icon}}"></span>
+                        </div>
+                    </div>
+                    <div class="counter-one__count-box">
+                        <h3 class="odometer" data-count="{{item.number}}">{{item.number}}+</h3>
+                        <p class="counter-one__text mb-0">{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

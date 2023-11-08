@@ -1,0 +1,15 @@
+.main-header{
+    position: fixed !important;
+    z-index: 997 !important;
+    opacity: 99% !important;
+}
+@media only screen and (max-width: 426px) {
+    .main-menu__left {
+        width: 41.6666666667% !important;
+    } 
+}
+@media only screen and (max-width: 375px) {
+    .main-menu__left {
+        width: 58.3333333333% !important;
+    } 
+}

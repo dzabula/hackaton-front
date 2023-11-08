@@ -1,0 +1,54 @@
+<ng-container *ngIf="isLoadedGalery">
+    <!--<carousel>
+        <slide *ngFor="let slide of images">
+          <img [src]="slide.path" alt="Slide" class="slide-image">
+          <div class="carousel-caption">
+      
+          </div>
+        </slide>
+      </carousel>-->
+  <section class="gallery w-100">
+    <!-- <div class="gallery__item">
+      <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
+      <img class="gallery__img" src="{{thumb.path}}" alt=""/>
+      <label for="img-1" class="gallery__thumb"><img src="{{thumb.path}}" alt=""/></label>
+    </div> -->
+    <div class="row">
+      <ng-container *ngFor="let img of images; let i = index">
+        <ng-container *ngIf="i == 0; else elseBlock">
+          <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+            <div class="gallery__item">
+              <input type="radio" id="img-{{i + 2}}" checked name="gallery" class="gallery__selector"/>
+              <img class="gallery__img big-image"  src="{{img.path}}" alt="thumnail image"/>
+              <label for="img-{{i+2}}" class="gallery__thumb d-flex justify-content-center"><img src="{{img.path}}" class="small-img w-100" alt=""/></label>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #elseBlock>
+          <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+            <div class="gallery__item">
+              <input type="radio" id="img-{{i + 2}}"  name="gallery" class="gallery__selector"/>
+              <img class="gallery__img big-image" src="{{img.path}}" alt="thumbnail image {{i}}"/>
+              <label for="img-{{i+2}}" class="gallery__thumb d-flex justify-content-center"><img src="{{img.path}}" class="small-img w-100" alt=""/></label>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+    <!-- <div class="gallery__item">
+      <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
+      <img class="gallery__img" src="https://picsum.photos/id/1039/600/400.jpg" alt=""/>
+      <label for="img-2" class="gallery__thumb"><img src="https://picsum.photos/id/1039/150/100.jpg" alt=""/></label>
+    </div>
+    <div class="gallery__item">
+      <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
+      <img class="gallery__img" src="https://picsum.photos/id/1057/600/400.jpg" alt=""/>
+      <label for="img-3" class="gallery__thumb"><img src="https://picsum.photos/id/1057/150/100.jpg" alt=""/></label>
+    </div>
+    <div class="gallery__item">
+      <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
+      <img class="gallery__img" src="https://picsum.photos/id/106/600/400.jpg" alt=""/>
+      <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
+    </div> -->
+  </section>
+</ng-container>

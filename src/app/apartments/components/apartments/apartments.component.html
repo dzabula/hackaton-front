@@ -1,0 +1,10 @@
+<app-cover [bigText]="bigText" [smallText]="smallText" [firstWord]="firstWord" ></app-cover>
+<app-filter [defaultCategoryId]="defaultCategoryId" [numPerson]="numPerson_" [start]="start_" [end]="end_" [HasApartment]="HasApartment" [loading]="loading" (filterEmiter)="FilterChange($event)"></app-filter>
+<app-all-apartments [items]="items"></app-all-apartments>
+<app-pagination
+[totalItems]="totalItems"
+[currentPage]="currentPage"
+[pageSize]="pageSize"
+[numberPages]="numberPages"
+(changingPage)="onPageChange($event)"
+></app-pagination>

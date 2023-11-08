@@ -1,0 +1,27 @@
+@media (max-width: 1092px) {
+    .page-header__overly{
+        top:0px !important;
+    } 
+
+}
+.font-18{
+    font-size: 18px;
+}
+.font-20{
+    font-size: 20px;
+}
+.font-24{
+    font-size: 24px;
+}
+.font-30{
+    font-size: 50PX !important;
+}
+.break-word{
+    word-wrap: break-word !important;
+}
+.firstWord{
+    color:var(--slaba-roza) !important;
+}
+.firstWord:hover{
+    color: var(--jaka-roza) !important;
+}

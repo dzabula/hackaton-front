@@ -1,0 +1,44 @@
+a,p,h1,h2,h4,h6,span{
+    color: white !important;
+}
+h3,h5{
+    color:var(--alipes-base) !important;
+}
+
+.blago-siva-narandzasta{
+    background-color: var(--single-apartment-bg);
+    color: var(--alipes-black);
+    border-radius: 1%;
+}
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px !important;
+    height: 100px !important;
+    background-color: #673ab7;
+    color: white;
+  }
+  .z-1000{
+    z-index: 1000;
+  }
+  
+
+
+
+.slaba-roza{
+    color: var(--slaba-roza) !important;
+}
+.jaka-roza{
+    color:var(--najjaca-roza) !important;
+}
+.apartment-title{
+    text-align: center;
+    color: var(--jaka-roza) !important;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    width: 100%;
+    line-height: 1;
+}
+  

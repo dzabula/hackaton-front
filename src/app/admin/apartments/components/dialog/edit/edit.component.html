@@ -1,0 +1,189 @@
+<section id="edit" class="py-2 z-999">
+<h2 class="text-center pb-2">Izmena Apartmana</h2>
+<form [formGroup]="editApartmentForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Naslov</mat-label>
+      <input matInput placeholder="Title" formControlName="title" required>
+      <mat-error *ngIf="editApartmentForm.contains('title') && editApartmentForm.controls['title']?.hasError('required')">Naslov je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+ 
+  <div class=" description-container"> 
+      <label for="description">Opis:</label><br/>
+      <angular-editor matInput class="h-200" formControlName="description" [config]="editorConfig" required></angular-editor>
+  </div>
+ 
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Letnja Cena (01.05. - 01.10.)</mat-label>
+      <input matInput type="number" placeholder="Regularna Cena Za Noc" formControlName="pricePerNight" required>
+      <mat-error *ngIf="editApartmentForm.contains('title') &&  editApartmentForm.controls['pricePerNight']?.hasError('min')">Cena mora biti veća od 0</mat-error>
+      <mat-error *ngIf="editApartmentForm.contains('title')  && editApartmentForm.controls['pricePerNight']?.hasError('required')">Cena je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Zimska cena</mat-label>
+      <input matInput type="number" placeholder="Cena Praznicima" formControlName="priceOnHoliday">
+      <mat-error *ngIf="editApartmentForm.contains('title') &&   editApartmentForm.controls['priceOnHoliday']?.hasError('min')">Cena mora biti veća od 0</mat-error>
+      <mat-error *ngIf="editApartmentForm.contains('title') && editApartmentForm.controls['priceOnHoliday']?.hasError('required')">Cena je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Cena Oko Nove Godine</mat-label>
+      <input matInput type="number" placeholder="" formControlName="priceOnNewYear">
+      <mat-error *ngIf="editApartmentForm.contains('title') &&   editApartmentForm.controls['priceOnNewYear']?.hasError('min')">Cena mora biti veća od 0</mat-error>
+      <mat-error *ngIf="editApartmentForm.contains('title') && editApartmentForm.controls['priceOnNewYear']?.hasError('required')">Cena je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+  <ng-container *ngFor="let spec of specPriceControls;let i = index">
+    <div class="form-row row py-5">
+        <mat-form-field class="col-12 mb-3">
+          <mat-label>Specijalni datum (ne morate podesavati godinu, cena ce vaziti svake godine za dati datum)</mat-label>
+          <input matInput [matDatepicker]="picker"  [value]="spec.formatedDate" [id]="'date' + spec.id">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker startView="month" [yearViews]="[]"   #picker [format]="'MM-YY'" ></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 ">
+          <mat-label>Specijalna cena u RSD</mat-label> 
+          <input matInput type="number" step="200" [value]="spec.price" placeholder="" [id]="'price' + spec.id" > 
+        </mat-form-field>
+
+        <div class="card-specprice-fields col-12 d-flex justify-content-end">
+          <button mat-button  color="warn"   (click)="removeFromSpecPrice(spec.id)" class="w-25">Obrisi</button>
+        </div>
+    </div>
+  </ng-container>
+
+  <div class="form-row">
+    <div class="card-specprice-fields col-12 d-flex justify-content-start">
+        <button mat-raised-button color="" class="button-bg-color-1 col-4 offset-4" (click)="addSpecPriceControls()">
+            Dodaj cenu za poseban datum
+        </button>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Površina</mat-label>
+      <input matInput type="number" placeholder="Povrsina" formControlName="surface">
+      <mat-error *ngIf="editApartmentForm.controls['surface']?.hasError('min')">Površina mora biti veća od 0</mat-error>
+      <mat-error *ngIf="editApartmentForm.contains('title') && editApartmentForm.controls['surface']?.hasError('required')">Površina je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Kategorija</mat-label>
+      <mat-select placeholder="Kategorija" formControlName="category" [(ngModel)]="selectedCategoryId" required>
+        <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Grad</mat-label>
+    <mat-select placeholder="Grad" formControlName="city" [(ngModel)]="selectedCityId" required="">
+        <mat-option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</mat-option>
+    </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Google Map link (Google Map => Odabir loakcije => Podeli => Ugradi mapu => Kopiraj HTML )</mat-label>
+      <input matInput type="text" placeholder="Google Map link" formControlName="googleMap">
+    </mat-form-field>
+  </div>
+
+  <div class="form-row mb-5">
+    <div class="w-75 mx-auto">  
+        <label>Trenutna
+          naslovna
+          slika: (Ukoliko otpremite novu 
+         sliku ova slika će biti izbrisana.
+          Ukoliko ne otpremite ni jednu sliku ova(stara)
+          slika će ostati sačuvana)!</label>
+   
+        <img [src]="currentApartment.file.path" alt="Slika {{ currentApartment.file.id }}" class="left-image mb-3">
+
+        <mat-form-field class="w-100">
+        <input matInput [placeholder]="'Naslovna slika'" [readonly]="true">
+        <input matFileInput type="file" (change)="handleThumbImageInput($event)" accept="image/*">
+        </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="w-75 mx-auto">
+        
+        <label>Trenutne slike: (Ukoliko ne štiklirate 'Sačuvaj sliku' slika će biti izbrisana nakon sto sačuvate promene. Morate ili otpremiti makar jednu sliku ili ostaviti štikliranu bar jednu sliku.)</label>
+        
+        <div *ngFor="let img of editableImages">
+            <div class="image-container">
+                <img [src]="img.path" alt="Slika {{img.id }}" class="left-image mb-3">
+                <div class="right-content">
+                <mat-radio-group>
+                    <mat-checkbox [checked]="img.isChecked" (change)="img.isChecked = !img.isChecked">Sacuvaj sliku</mat-checkbox>
+                </mat-radio-group>
+                </div>
+              </div>
+        </div>
+        
+        <mat-form-field class="w-100">
+        <input matInput [placeholder]="'Slike'" [readonly]="true">
+        <input matFileInput type="file" class="px-2"   multiple (change)="handleImagesInput($event)" accept="image/*">
+        </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Prioritet</mat-label>
+      <input matInput type="number" placeholder="Prioritet" formControlName="priority">
+      <mat-error *ngIf="editApartmentForm.contains('title') &&  editApartmentForm.controls['priority']?.hasError('min')">Prioritet mora biti veći od 0</mat-error>
+      <mat-error *ngIf="editApartmentForm.contains('title') &&  editApartmentForm.controls['priority']?.hasError('required')">Prioritet je obavezno polje</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Broji soba</mat-label>
+      <mat-select placeholder="Broji soba"  [(ngModel)]="selectedCityId" formControlName="rooms"  required>
+        <mat-option *ngFor="let room of rooms" [value]="room.id">{{ room.value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngFor="let spec of specifications$ ;">
+    <div class="col-6">
+      <div class="row d-flex">
+        <div class="form-row">
+            <mat-form-field [appearance]="appearance">
+                <mat-label>{{ spec.name }}</mat-label>
+                <input matInput [formControlName]="spec.name" required>
+            </mat-form-field>
+        </div>
+      </div>
+    </div>
+   </div>
+  <div class="form-buttons buttons">
+    
+        <button mat-raised-button color="light" class="margin-right-50 bg-success color-white " type="submit" [disabled]="editApartmentForm.invalid">Sačuvaj</button>
+        
+        <button mat-raised-button color="warn" type="button" (click)="close()">Odustani</button>  
+    
+  </div>
+</form>
+</section>

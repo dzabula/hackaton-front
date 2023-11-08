@@ -1,0 +1,143 @@
+<div class="table-container margin-top-150 ">
+    <h2 class="color-white reservation-title">Rezervacije</h2>
+
+    <div class="ml-auto d-block justify-content-center align-items-center">
+        <p class="reservation-sum">Ukupna zarada: <span class="reservation-sum-number"> {{salary | MoneyFormat}} RSD</span></p>
+        <p class="reservation-sum">Zarada ovog meseca: <span class="reservation-sum-number"> {{salaryMonth | MoneyFormat}} RSD</span></p>
+        <p class="reservation-sum">Zarada ove godine: <span class="reservation-sum-number"> {{salaryYear | MoneyFormat}} RSD</span></p>
+        <p>
+            * Zarada od jedne rezervacije apartmana se dodaje na sumu tek kada se rezervacija označi kao naplaćena. 
+            U Zaradi za trenutni mesec se raćunaju samo rezervacije čiji datumi počinju ovog meseca. 
+        </p>
+    </div>
+    <div class="w-100" >
+        <div class=" p-4 filter-form ">
+            <mat-form-field class="col-12 col-lg-3">
+              <mat-label>Od</mat-label>
+              <input matInput [matDatepicker]="startDatePicker" [(ngModel)]="startDate">
+              <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDatePicker></mat-datepicker>
+            </mat-form-field>
+        
+            <mat-form-field class="col-12 col-lg-3 offset-lg-1">
+              <mat-label>Do</mat-label>
+              <input matInput [matDatepicker]="endDatePicker" [min]="startDate" [(ngModel)]="endDate">
+              <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDatePicker></mat-datepicker>
+            </mat-form-field>
+        
+        
+            <mat-form-field class="col-12 col-lg-4 offset-lg-1">
+              <mat-label>Po naslovu apartmana</mat-label>
+              <input matInput type="text" [(ngModel)]="apartmentKeyWord">
+            </mat-form-field>
+
+            <div class="w-100">
+                <mat-radio-group [(ngModel)]="selectedRadioButtonValue" class="row">
+                    <mat-radio-button class="col-12 col-md-3 color-white"  value="all" tabindex="0" selected>Sve</mat-radio-button>
+                    <mat-radio-button class="col-12 col-md-3 offset-md-1 color-white"  value="NotPaid">Neplaćeno</mat-radio-button>
+                    <mat-radio-button class="col-12 col-md-3 offset-md-1 color-white"  value="Paid">Plaćeno</mat-radio-button>
+                    <button mat-button class="mt-4 col-6 offset-3  bg-white primary-color-on-website bold" (click)="filtrate()">Primeni</button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="!hasReservations && !loading">
+        <div class="container d-flex">
+            <div class="alert">
+                <h3 class="filter-apartment-subtitle">Nazalost trnutno nema trazenih rezervacija</h3>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <div class="container d-flex justify-content-center">
+            <div class="alert">
+                <div class="spinner" [@spin]></div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="hasReservations && !loading" >
+
+        <mat-table [dataSource]="reservations" class="mat-elevation-z8">
+
+    
+        <ng-container matColumnDef="fullName">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Na ime</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" (click)='openDialog("Rezervacija je na ime:",reservation.fullName)' class="primary-color-on-website pointer w-100"><span class="text-center w-100">{{shortenString(reservation.fullName)}}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Telefon</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" (click)='openDialog("Broji telefona:",reservation.phone)' class="primary-color-on-website pointer w-100"><span class="text-center w-100">Vidi telefon</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Apartman</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="primary-color-on-website pointer w-100 " ><a class="primary-color-on-website pointer text-center w-100 " routerLink="/apartments/{{reservation.apartmentId}}"> <span class="text-center w-100">{{shortenString(reservation.title) }}</span></a></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="from">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Datum od</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span class="text-center w-100" (click)='openDialog("Datum useljenja:",reservation.from)'>{{ reservation.from | FormatDate}}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="to">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Datum Do</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100" ><span class="text-center w-100" (click)='openDialog("Datum iseljenja:",reservation.to)'>{{ reservation.to | FormatDate}}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Ukupna cena</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span class="text-center w-100">{{ reservation.amount | MoneyFormat }} rsd</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cancelled">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100 w-100">Status?</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span class="text-center w-100">{{ reservation.cancelled ? "Otkazana" : "Aktivna" }}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cancel">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100 w-100">Oznaci avans</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span  (click)='openDialogMarkCancel(reservation)' class="primary-color-on-website pointer text-center w-100">{{ reservation.cancelled ? "Aktiviraj" : "Otkazi" }}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="isPaid">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100 w-100">Plaćeno?</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span class="text-center w-100">{{ reservation.isPaid ? "Placeno" : "Nije placeno" }}</span></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="markPaid">
+            <mat-header-cell *matHeaderCellDef ><span class="text-center w-100">Označi kao plaćeno</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="primary-color-on-website pointer w-100" (click)="markPaidDialog(reservation)">
+                <span class="text-center w-100"> {{ reservation.isPaid ? "Poništi plaćanje" : "Označi kao plaćeno"}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"><span class="text-center w-100">Obriši</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation">
+            <button mat-icon-button color="warning" class="w-100" (click)="deleteReservationsDialog(reservation)">
+                <mat-icon class="red-color pointer">Obriši</mat-icon>
+            </button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef><span class="text-center w-100">Kreirano</span></mat-header-cell>
+            <mat-cell *matCellDef="let reservation" class="w-100"><span class="text-center w-100">{{reservation.createdAt | FormatDate}}</span></mat-cell>
+        </ng-container>
+
+        
+    
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        </mat-table>
+
+    </ng-container>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

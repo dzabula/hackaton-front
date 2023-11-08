@@ -1,0 +1,76 @@
+<section class="testimonial-two">
+    <div class="testimonial-two__bg" style="background-image: url(assets/images/testimonial-one-shape-2.png);"></div>
+    <div class="container">
+        <div class="testimonial-two__top">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="testimonial-two__top-left">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">Naši zaposleni</span>
+                            <h2 class="section-title__title">Naša timski usmerena organizacija je ponosna 
+                                na svoje zaposlene, koji su ključni pokretači uspeha naše kompanije</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="testimonial-two__top-right">
+                        <p class="testimonial-two__top-text">Generalni
+                             direktor, HR menadžerka, Finansijski direktor i Generalni menadžer donose jedinstvene 
+                             veštine i stručnost na svoje pozicije. Svi su posvećeni pružanju vrhunske usluge našim
+                              kupcima i ostvarivanju visokih standarda kroz inovativnost, integritet i timski rad. Njihova posvećenost i
+                             strast doprinose stvaranju izuzetnih apartmana u našoj zgradi, pružajući našim klijentima ne samo dom, već i 
+                             iskustvo koje će dugo pamtiti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-two__bottom">
+            <div class="testimonial-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                " loop": true, "autoplay": "margin": 30, "nav": false, "dots": "smartSpeed": 500, "autoplayTimeout": 10000, "navText": ["<span>","<span class="\"icon-right-arrow1\""></span>"],
+                "responsive": {
+                    "0": {
+                        "items": 1
+                    },
+                    "768": {
+                        "items": 1
+                    },
+                    "992": {
+                        "items": 2
+                    },
+                    "1200": {
+                        "items": 2
+                    }
+                }
+            }'>
+                <!--Testimonial Two Single Start-->
+                <ng-container *ngIf="employes" >
+                    <ng-container *ngFor="let employe of employes">
+                        <div class="item">
+                            <div class="testimonial-two__single">
+                                <div class="testimonial-two__client-img-box">
+                                    <div class="testimonial-two__client-img">
+                                        <img src="assets/{{employe.image.src}}" alt>
+                                    </div>
+                                </div>
+                                <div class="testimonial-two__client-info">
+                                    <div class="testimonial-two__client-details">
+                                        <div class="testimonial-two__client-rating">
+                                            
+                                        </div>
+                                        <h3 class="testimonial-two__client-name">{{employe.fullName}}</h3>
+                                        <p class="testimonial-two__client-sub-title">{{employe.position}}</p>
+                                    </div>
+                                    <div class="testimonial-two__quote">
+                                        <span class="icon-quote"></span>
+                                    </div>
+                                </div>
+                                <p class="testimonial-two__text">{{employe.description}}</p>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                
+                </div>
+        </div>
+    </div>
+</section>

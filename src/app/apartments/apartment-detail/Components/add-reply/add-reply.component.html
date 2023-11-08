@@ -1,0 +1,26 @@
+<div class="comment-form">
+    <form [formGroup]="forma" action="#" class="comment-one__form contact-form-validated" novalidate="novalidate">
+
+        <div class="row">
+            <div class="col-xl-12">
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Odgovor</mat-label>
+                        <textarea matInput formControlName="message" placeholder="Unesite poruku"></textarea>
+                        <mat-error *ngIf="forma.controls['message'].hasError('required')">Poruka je obavezna</mat-error>
+                    </mat-form-field>
+
+                
+                    <button class="w-100 mx-auto button-bg-color-1" mat-raised-button color="" type="submit" (click)="submitedForm()" [disabled]="forma.invalid">Odogovri</button>
+                    <ng-container *ngIf="loading">
+                        <div class="container d-flex justify-content-center">
+                            <div class="alert">
+                                <div class="spinner" [@spin]></div>
+                            </div>
+                        </div>
+                    </ng-container>
+               
+            </div>
+        </div>
+    </form>
+</div>

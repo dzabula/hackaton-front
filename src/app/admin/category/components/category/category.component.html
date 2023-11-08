@@ -1,0 +1,58 @@
+<div class="table-container margin-top-150 ">
+    <div class="d-flex">
+        <h2 class="color-white">Kategorije</h2>
+        <button mat-button color="green" class="add-apartment color-white px-3 py-2" (click)="openCreateCategoryDialog()">
+            <!-- <mat-icon>delete</mat-icon> -->+ Kategorija
+        </button>
+    </div>
+    <ng-container *ngIf="!hasCategories && !loading">
+        <div class="container d-flex">
+            <div class="alert">
+                <h3 class="filter-apartment-subtitle">Nažalost trnutno nema niti jedne kategorije</h3>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <div class="container d-flex justify-content-center">
+            <div class="alert">
+                <div class="spinner" [@spin]></div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="hasCategories" >
+
+        <mat-table [dataSource]="categories" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Naziv</mat-header-cell>
+            <mat-cell *matCellDef="let category">{{category.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="delete" >
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"></mat-header-cell>
+            <mat-cell *matCellDef="let category">
+            <button mat-icon-button color="warn" class="w-100" (click)="deleteCategoryDailog(category)">
+                Obirši
+                <!-- <mat-icon>delete</mat-icon> -->
+            </button>
+            </mat-cell>
+        </ng-container>
+    
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        </mat-table>
+
+    </ng-container>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

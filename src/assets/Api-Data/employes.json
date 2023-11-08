@@ -1,0 +1,38 @@
+[
+    {
+        "fullName":"Marko Petrović",
+        "position":"Generalni direktor",
+        "description":"Gospodin Marko Petrović je strastveni vizionar i vođa našeg tima. Sa bogatim iskustvom u industriji gradnje, on usmerava našu kompaniju ka postizanju izvrsnosti i ostvarivanju najviših standarda.",
+        "image":{
+            "src":"images/testimonial-client-2-1.jpg",
+            "alt":""
+        }
+    },
+    {
+        "fullName":"Ana Jovanović",
+        "position":"HR",
+        "description":"Gospođa Ana Jovanović je srce naše organizacije. Sa njenom brižnom i empatičnom prirodom, vodi naš HR tim i brine se o dobrobiti naših zaposlenih.",
+        "image":{
+            "src":"images/testimonial-client-2-2.jpg",
+            "alt":""
+        }
+    },
+    {
+        "fullName":"Nikola Ivanović",
+        "position":"Finansiski Direktor",
+        "description":"Gospodin Nikola Ivanović je finansijski stručnjak našeg tima. Sa svojom analitičkom ekspertizom i dubokim razumevanjem tržišta, on je ključni igrač u osiguravanju finansijske stabilnosti naše kompanije.",
+        "image":{
+            "src":"images/testimonial-client-2-4.jpg",
+            "alt":""
+        }
+    },
+    {
+        "fullName":"Gospođa Marija Popović",
+        "position":"Generalni Menadzer",
+        "description":" Gospođa Marija Popović je kreativni vođa naše zgrade sa apartmanima. Sa svojom stručnošću u projektiranju enterijera i dubokom strašću za estetiku.",
+        "image":{
+            "src":"images/testimonial-client-2-3.jpg",
+            "alt":""
+        }
+    }
+]

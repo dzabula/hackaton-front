@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-card>
+      <mat-card-title class="py-4">Log In</mat-card-title>
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+          </mat-form-field>
+          <button mat-raised-button class="button-bg-color-1 color-white" [@fadeInOut]="isLoading ? 'in' : 'out'" type="submit">Log In</button>
+          <div *ngIf="isLoading" class="mt-3">Učitavanje...</div>
+          <p *ngIf="error != '' " class="error-message mt-3">{{ error }}</p>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

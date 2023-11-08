@@ -1,0 +1,17 @@
+
+
+ <div class="d-flex justify-content-center mb-4">
+    <div class="pagination w-50 " *ngIf="numberPages > 1">
+                <a  [ngClass]="{ 'd-none': currentPage == 1}"  class="pagination__item pointer" (click)="prev()">
+                    &laquo;
+                </a>
+                
+                <a *ngFor="let _ of [].constructor(numberPages); let i = index" (click)="goToPage(i+1)"
+                [ngClass]="{ 'active': currentPage == (i+1)}" class="pagination__item pointer">{{i+1}}</a>
+
+                <a [ngClass]="{ 'd-none': totalItems <= (pageSize * currentPage)}" class="pagination__item pointer"  
+                    (click)="next()">&raquo;
+                </a>
+
+    </div>
+</div>

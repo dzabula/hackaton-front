@@ -1,0 +1,818 @@
+[
+    {
+        "Id":1,
+        "title":"Sofia  apartman",
+        "description":"Najbolji apartman na Vracaru. Odlican pogled lako dostupan sa bilo koje tacke u Beogradu",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman1.jpg",
+            "alt":"Sofia lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman1.jpg",
+                "alt":"Sofia lux apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman2.jpg",
+                "alt":"Sofia lux apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman3.jpg",
+                "alt":"Sofia lux apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman4.jpg",
+                "alt":"Sofia lux apartman eksterijer"
+            }
+        ],
+        "price":{
+            "price":2000,
+            "priceWeekend":2800,
+            "priceHoliday":5500
+        },
+        "category":{
+            "id":1,
+            "name":"Lux"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Mirko",
+                "Text":"Jako jeftin Apartman",
+                "childrens":[]
+            },
+            {
+                "Author":"Vlada",
+                "Text":"Jako lep Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine hvala na podrsci!"
+                    }
+                ]
+            }
+        ],
+        "squere":50,
+        "createdAt":"2023-01-01 00:00:00", 
+       "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    },
+    {
+        "Id":2,
+        "title":"Roma  apartman",
+        "description":"Najbolji apartman na Vracaru. Odlican pogled lako dostupan sa bilo koje tacke u Beogradu",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman2.jpg",
+            "alt":"Roma lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman5.jpg",
+                "alt":"Roma lux apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman6.jpg",
+                "alt":"Roma lux apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman7.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman8.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":3000,
+            "priceWeekend":3800,
+            "priceHoliday":6500
+        },
+        "category":{
+            "id":1,
+            "name":"Lux"
+        },
+        "city":{
+            "id":2,
+            "name":"Novi Sad"
+        },
+        "comments":[
+            {
+                "Author":"Nikola",
+                "Text":"Jako los Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine nemojte lagati!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Nemanja",
+                "Text":"Jako sredjen apartman i ljubazno osoblje",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine hvala na podrsci to nam puno znaci!"
+                    }
+                ]
+            }
+        ],
+        "squere":80,
+        "createdAt":"2023-01-01 00:00:00", 
+       "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    },
+    {
+        "Id":3,
+        "title":"Strutals  apartman",
+        "description":"Najbolji apartman u Futogu. Odlican pogled lako dostupan sa bilo koje tacke u Novom Sadu",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman3.jpg",
+            "alt":"Sofia lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman9.jpg",
+                "alt":"Strutals apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman10.jpg",
+                "alt":"Strutals apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman11.jpg",
+                "alt":"Strutals apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman12.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":1800,
+            "priceWeekend":2000,
+            "priceHoliday":3000
+        },
+        "category":{
+            "id":1,
+            "name":"Economic"
+        },
+        "city":{
+            "id":2,
+            "name":"Novi Sad"
+        },
+        "comments":[
+            {
+                "Author":"Viktor",
+                "Text":"Apartman nij los, ali bi bilo mnogo bolje da ima klime",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na kritici, pobrinucemo se da bude klimatizovano!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Zoran",
+                "Text":"Odlicno!!!",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na podrsci Zorane!"
+                    }
+                ]
+            }
+        ],
+        "squere":46,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    },
+    {
+        "Id":4,
+        "title":"Dejavu  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman4.jpg",
+            "alt":"Dejavu lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman13.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman14.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman15.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman16.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":4000,
+            "priceWeekend":5800,
+            "priceHoliday":25000
+        },
+        "category":{
+            "id":3,
+            "name":"Premium"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Slavisa",
+                "Text":"Jako ne ljubazno osoblje!!!",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine izvinjavamo se!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Srboljub",
+                "Text":"Cistacica je jako jako nekulturna",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na informaciji!"
+                    }
+                ]
+            },
+            {
+                "Author":"Mirijana",
+                "Text":"Prema meni je osoblje bilo ljubazno"
+            }
+        ],
+        "squere":72,
+        "createdAt":"2023-01-01 00:00:00", 
+       "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    },
+    {
+        "Id":5,
+        "title":"Akapulko  apartman",
+        "description":"Jako dobar apartman. Nalazi se na dorcolu u blizini Knez Mihailove.Odlicna lokacija u gradu",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman5.jpg",
+            "alt":"Sofia lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman1.jpg",
+                "alt":"Akapulko klasik apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman5.jpg",
+                "alt":"Akapulko klasik apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman9.jpg",
+                "alt":"Akapulko klasik apartman dodatna slika enterijera"
+            }, {
+                "src":"/assets/images/apartmani/shared/apartman13.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":2000,
+            "priceWeekend":2400,
+            "priceHoliday":3000
+        },
+        "category":{
+            "id":4,
+            "name":"Klaski"
+        },
+        "city":{
+            "id":3,
+            "name":"Kragujevac"
+        },
+        "comments":[
+            {
+                "Author":"Rade",
+                "Text":"Lep apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Zahvaljujem!"
+                    }
+
+                ]
+            }
+        ],
+        "squere":22,
+        "createdAt":"2023-01-01 00:00:00", 
+       "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    },
+    {
+        "Id":6,
+        "title":"Mozzart  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman6.jpg",
+            "alt":"Dejavu lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman2.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman6.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman10.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman14.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":4000,
+            "priceWeekend":5800,
+            "priceHoliday":25000
+        },
+        "category":{
+            "id":3,
+            "name":"Premium"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Ljubisa",
+                "Text":"Vrhunski pogled, osoblje na nivou, sve pohvale",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala Vam gosopodine!"
+                    }
+
+                ]
+            }
+        ],
+        "squere":72,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":7,
+        "title":"Bonbami  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman7.jpg",
+            "alt":"Dejavu lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman3.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman7.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman11.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman15.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":4000,
+            "priceWeekend":5800,
+            "priceHoliday":25000
+        },
+        "category":{
+            "id":3,
+            "name":"Premium"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Mirko",
+                "Text":"Jako los Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine nemojte lagati!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Vlada",
+                "Text":"Jako lep Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine hvala na podrsci!"
+                    }
+                ]
+            }
+        ],
+        "squere":72,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":8,
+        "title":"Sunshine  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman8.jpg",
+            "alt":"Dejavu lux apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman4.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman8.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman12.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman16.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":4000,
+            "priceWeekend":5800,
+            "priceHoliday":25000
+        },
+        "category":{
+            "id":3,
+            "name":"Premium"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Robin",
+                "Text":"Uzasno je prljav apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine dobili smo primedbe i na Vas od strane osoblja!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Dusko",
+                "Text":"Apartman je lep i sredjen",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na podrsci gosopodine!"
+                    }
+                ]
+            }
+        ],
+        "squere":72,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":9,
+        "title":"Provansa  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman9.jpg",
+            "alt":"Dejavu Premium apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman16.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman11.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman6.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman1.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":4000,
+            "priceWeekend":5800,
+            "priceHoliday":25000
+        },
+        "category":{
+            "id":3,
+            "name":"Premium"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Jelena",
+                "Text":"Jako sam razocarana ovim apartmanom, pritom je i preskup!!!",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Uzecemo u obzir vasu kritiku."
+                    }
+
+                ]
+            },
+            {
+                "Author":"Zorana",
+                "Text":"Apartman je prekup u odnosu na uslugu",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Zahvaljujemo na povratnoji informaciji!"
+                    }
+                ]
+            }
+        ],
+        "squere":72,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":10,
+        "title":"Zeus  apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman10.jpg",
+            "alt":"Zeus economic apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman15.jpg",
+                "alt":"Dejavu premimu apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman10.jpg",
+                "alt":"Dejavu premimu apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman5.jpg",
+                "alt":"Dejavu premimu apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman4.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":1500,
+            "priceWeekend":1800,
+            "priceHoliday":2500
+        },
+        "category":{
+            "id":2,
+            "name":"Economic"
+        },
+        "city":{
+            "id":3,
+            "name":"Kragujevac"
+        },
+        "comments":[
+            {
+                "Author":"Milica",
+                "Text":"Apartman je na top lokaciji, a i cene je super",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na pozitivnom komentaru!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Andjela",
+                "Text":"Apartman je top",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"<3"
+                    }
+                ]
+            }
+        ],
+        "squere":63,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":11,
+        "title":"Morgana apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman11.jpg",
+            "alt":"Morgana economic apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman14.jpg",
+                "alt":"Morgana economic apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman9.jpg",
+                "alt":"Morgana economic apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman4.jpg",
+                "alt":"Morgana economic apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman16.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":2100,
+            "priceWeekend":2600,
+            "priceHoliday":3300
+        },
+        "category":{
+            "id":2,
+            "name":"Economic"
+        },
+        "city":{
+            "id":2,
+            "name":"Novi Sad"
+        },
+        "comments":[
+            {
+                "Author":"Jovana",
+                "Text":"Apartman je uzas",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gospodjo hvala!"
+                    }
+
+                ]
+            }
+        ],
+        "squere":50,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":12,
+        "title":"Odeeys apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman12.jpg",
+            "alt":"Odeeys economic apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman13.jpg",
+                "alt":"Odeeys economic apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman8.jpg",
+                "alt":"Odeeys economic apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman3.jpg",
+                "alt":"Odeeys economic apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman16.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":1200,
+            "priceWeekend":1600,
+            "priceHoliday":1800
+        },
+        "category":{
+            "id":2,
+            "name":"Economic"
+        },
+        "city":{
+            "id":2,
+            "name":"Novi Sad"
+        },
+        "comments":[
+            {
+                "Author":"Mirko",
+                "Text":"Jako los Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine nemojte lagati!"
+                    }
+
+                ]
+            },
+            {
+                "Author":"Vlada",
+                "Text":"Jako lep Apartman",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Gosopodine hvala na podrsci!"
+                    }
+                ]
+            }
+        ],
+        "squere":18,
+        "createdAt":"2023-01-01 00:00:00", 
+        "floor":2, "bedrooms":2, "bathroom":1, "parking": 1 
+    },
+    {
+        "Id":13,
+        "title":"Hydra apartman",
+        "description":"Jedan od najboljih apartmana koje imamo u ponuci.Apartman se nalazi na Beograd u na void. Odlican pogled na reku i grad",
+        "thumb":{
+            "src":"/assets/images/apartmani/apartman13.jpg",
+            "alt":"Hydra economic apartman"
+        },
+        "images":[
+            {
+                "src":"/assets/images/apartmani/shared/apartman1.jpg",
+                "alt":"Hydra economic apartman dizajn"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman5.jpg",
+                "alt":"Hydra economic apartman eksterijer"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman11.jpg",
+                "alt":"Hydra economic apartman dodatna slika enterijera"
+            },
+            {
+                "src":"/assets/images/apartmani/shared/apartman13.jpg",
+                "alt":"Roma lux apartman dodatna slika enterijera"
+            }
+        ],
+        "price":{
+            "price":2200,
+            "priceWeekend":2500,
+            "priceHoliday":2600
+        },
+        "category":{
+            "id":2,
+            "name":"Economic"
+        },
+        "city":{
+            "id":1,
+            "name":"Beograd"
+        },
+        "comments":[
+            {
+                "Author":"Tamara",
+                "Text":"Vrhunski apartman je ovo!",
+                "childrens":[
+                    {
+                    "Author":"Administrator",
+                    "Text":"Hvala na podrsci gosopodjo!"
+                    }
+
+                ]
+            }
+        ],
+        "squere":30,
+        "createdAt":"2023-01-01 00:00:00", 
+       "floor":2, "bedrooms":2, "bathroom":1, "parking": 1
+    }
+    
+]

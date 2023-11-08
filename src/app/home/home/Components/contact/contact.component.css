@@ -1,0 +1,36 @@
+.color-white{
+    color: white !important;
+}
+@media (max-width: 1225px) {
+    .contact-one__points{
+        display: block !important;
+    }
+    .mobile-margin-left-0{
+        margin-left: 0px !important;
+    }
+    .mobile-font{
+        font-size: 15px !important;
+    }
+}
+@media (max-width: 992px) {
+    .contact-one__form-box{
+        padding: 30px !important;
+    }
+}
+@media (max-width: 425px) {
+    .content{
+        margin-left: 10px !important;
+    }
+}
+.contact-form-container{
+    background-color: var(--roze-krem2);
+}
+.line-h{
+    line-height: 1.8 !important;
+}
+.px17{
+    font-size: 17px;
+}
+.mt-56{
+    margin-top: 56px !important;
+}

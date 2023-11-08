@@ -1,0 +1,13 @@
+.color-white{
+    color: white !important;
+}
+@media (max-width: 1225px) {
+    
+    .floor-plan__top-left{
+        margin-top: 50px !important;
+    }
+    .tabs-content{
+        padding: 15px !important;
+    }
+
+}

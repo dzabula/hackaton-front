@@ -1,0 +1,146 @@
+                <!-- <div class="apartment-details-one__img-box">
+                    <div class="apartment-details-one__img">
+                        <img src="{{data.file.path}}" alt>
+                    </div>
+                </div> -->                
+                <p class="other-spec-text mt-4 px-1">Osnovne Karakteristike:</p>
+                <div class="apartment-details-one__list-box py-16 pb-0 mb-0 other-specifications-card d-flex justify-content-center align-items-center">
+                    <div class="row d-flex w-100">
+                            <div class="col-12 col-md-6 col-lg-3  mb-2">
+                                <div class="apartment-details-one__list-content">                                      
+                                    <div>  
+                                        <span class="master-spec hvr-float-shadow"><i class="max-spec-icon icon-ruler aplipes-black"></i>{{data.surface}} m2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3  mb-2">
+                                <div class="apartment-details-one__list-content">                                      
+                                    <div>    
+                                        <span class="master-spec hvr-float-shadow"><i class="max-spec-icon fa-solid fa-stairs"></i>{{data.floor}} sprat</span>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col-12 col-md-6 col-lg-3  mb-2">
+                                <div class="apartment-details-one__list-content">                                      
+                                    <div>    
+                                        <div *ngIf="data.garage == true; else elseBlock1">
+                                            <span class="master-spec hvr-float-shadow"><i class="max-spec-icon fa-solid fa-square-parking"></i><i class=" fa-solid fa-check aplipes-black"></i> </span>
+                                        </div>
+                                        <ng-template #elseBlock1>
+                                            <span class="master-spec hvr-float-shadow"><i class="max-spec-icon fa-solid fa-square-parking"></i><i class=" fa-solid fa-ban aplipes-black"></i> </span>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-12 col-md-6 col-lg-3  mb-2">
+                                <div class="apartment-details-one__list-content">                                      
+                                    <div>    
+                                        <div *ngIf="data.wifi == true; else elseBlock2">
+                                            <span class="master-spec hvr-float-shadow"><i class="max-spec-icon fa-solid fa-wifi"></i> <i class="fa-solid fa-check aplipes-black"></i> </span>
+                                        </div>
+                                        <ng-template #elseBlock2>
+                                            <span class="master-spec hvr-float-shadow"><i class="max-spec-icon fa-solid fa-wifi"></i><i class="fa-solid fa-ban aplipes-black"></i> </span>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>  
+                    </div>                    
+                </div>
+
+                <p class="other-spec-text px-1">Ostale Karakteristike:</p>
+                <div class="apartment-details-one__list-box py-16 other-specifications-card">
+                <div class="row d-flex justify-content-end">
+                        <ng-container *ngFor="let spec of data.apartmentSpecifications; let i = index">
+                            <ng-container *ngIf="spec.value.toLowerCase() != 'ne' || spec.value.toLowerCase() == 'ima'; else elseBlock5">
+                                 <span class="w-inherit spec-line  mb-3">
+                                    <div class="apartment-details-one__list-content">                                      
+                                        <div>    
+                                            <div *ngIf="spec.value.toLowerCase() == 'da' || spec.value.toLowerCase() == 'ima'; else elseBlock5">
+                                                <span class="hvr-float-shadow">{{spec.icon}} {{spec.specification}}: <i class="fa-solid fa-check aplipes-black"></i> </span>
+                                            </div>
+                                            <ng-template #elseBlock5>
+                                                <div *ngIf="spec.value.toLowerCase() == 'ne' || spec.value.toLowerCase() == 'nema'; else elseBlock6">
+
+                                                </div>
+                                                <ng-template #elseBlock6>
+                                                    <span class="hvr-float-shadow">
+                                                        {{spec.icon}}
+                                                        {{spec.specification}}: {{spec.value}}
+                                                    </span>
+                                                </ng-template>
+                                            </ng-template>
+                                        </div>
+                                    </div>
+                                </span>    
+                            </ng-container>                       
+                        </ng-container>
+                </div>
+                </div>
+
+                <p class="other-spec-text price-subtitle px-1">Cenovnik:</p>
+                <div class="container d-flex justify-content-center px-0 mt-3 w-100">
+                    <div class="row px-0">
+                        <div class="row row-price">
+                            <div class="col-lg-5 col-10">
+                                <span class="price-span text-left" ><i class="user-icon fa-solid fa-user-group"></i> Minimum: </span>
+                            </div>
+                            <div class="col-1 offset-lg-6 ">
+                                <span class="price-span">{{minPerson}}</span>
+                            </div>
+                        </div>
+                        <div class="row row-price w-100">
+                            <div class="col-lg-5 col-10">
+                                <span class="price-span text-left"><i class="user-icon fa-solid fa-user-group"></i> Maksimum:</span>
+                            </div>
+                            <div class="col-1 offset-lg-6 ">
+                                <span class="price-span">{{maxPerson}}</span>
+                            </div>
+                        </div>
+                        <div class="row w-100 row-price" *ngFor="let num of arrPerson;let i = index">
+                            <div class="col-lg-3 col-7">
+                                <span class="price-span text-left"><i class="user-icon fa-solid fa-user-group"></i> x {{num}}:</span>
+                            </div>
+                            <div class="col-5  offset-lg-6 col-lg-3">
+                                <span class="price-span">{{currentPrice + (data.pricePerPerson * i) | MoneyFormat}} &euro;</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="price-span text-left">PDV je uracunat u cenu, kao i sve ostale takse i naknade!</span>
+                            </div>
+                        </div>
+
+                        <ng-container *ngIf="specPrices.length > 0">
+
+                            <div class="py-2"></div>
+
+                            <div class="row row-price">
+                                <div class=" col-11">
+                                    <span class="price-span text-left" ><i class="fa-solid fa-calendar-days"></i> Doplata za određene datume:</span>
+                                </div>
+                                <div class="col-1 ">
+                                    <span class="price-span"></span>
+                                </div>
+                            </div>
+
+                            <div class="row w-100 row-price"*ngFor="let spec of specPrices">
+                                <div class="col-lg-3 col-6">
+                                    <span class="price-span text-left"><i class="fa-solid fa-calendar-days"></i> {{ spec.date | date: 'dd.MM.' }} </span>
+                                </div>
+                                <div class="col-6 offset-lg-6 col-lg-3">
+                                    <span class="price-span">{{spec.price - currentPrice | MoneyFormat}} &euro;</span>
+                                </div>
+                            </div>
+
+                        </ng-container>
+                        
+                    </div>
+                </div>
+
+                
+                <div class="row d-flex justify-content-center pt-5 pb-3">
+                    <button (click)="ShowReservationDialog()" class="btn button-bg-color-1 col-8  col-md-6 col-lg-4 color-white reservation-button"> Rezerviši Sada </button>
+                </div>
+               
+
+                

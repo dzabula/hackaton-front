@@ -1,0 +1,14 @@
+
+.current{
+    color:var(--najjaca-roza) !important;
+}
+.ml-35{
+    margin-left: 35% !important;
+}
+
+@media (max-width: 967px){
+   .ml-35{
+         margin-left: 0% !important;
+         margin-bottom: 30px !important;
+   }
+}

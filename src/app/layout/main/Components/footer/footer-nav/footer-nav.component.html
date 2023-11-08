@@ -1,0 +1,20 @@
+<div class="footer-widget__column footer-widget__explore">
+    <div class="footer-widget__title-box">
+        <h3 class="footer-widget__title color-strong ml-35">Meni</h3>
+    </div>
+    <div class="footer-widget__explore-list-box">
+        <ul class="footer-widget__explore-list list-unstyled ml-35">
+            <ng-container *ngFor="let link of links; let i = index" >
+
+                    <li class=" current megamenu">
+                        <a routerLink="{{link.link}}" routerLinkActive="current">{{link.name}}</a>
+                        
+                    </li>
+
+          
+
+            </ng-container>    
+        </ul>
+
+    </div>
+</div>

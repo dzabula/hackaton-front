@@ -1,0 +1,94 @@
+<div class="table-container margin-top-150 ">
+    <div class="d-flex">
+        <h2 class="color-white">Korisnici</h2>
+    </div>
+
+    <div class="w-100" >
+        <div class=" p-4 filter-form ">
+            <mat-form-field class="col-12 col-lg-8">
+              <mat-label>Pretraži po imenu i prezimu</mat-label>
+              <input matInput type="text" [(ngModel)]="userKeyWord">
+            </mat-form-field>
+
+        
+            <div class="w-100">
+                <button mat-button class="mt-4 col-12 col-lg-5  bg-white primary-color-on-website bold" (click)="loadUsers()">Pretrazi</button>
+           
+                <button mat-button class="mt-4 col-12 col-lg-5 offset-lg-2 bg-white primary-color-on-website bold" (click)="cancelSearch()">Poništi</button>
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="!hasUsers && !loading">
+        <div class="container d-flex">
+            <div class="alert">
+                <h3 class="filter-apartment-subtitle">Nažalost trnutno nema korisnika</h3>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <div class="container d-flex justify-content-center">
+            <div class="alert">
+                <div class="spinner" [@spin]></div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="hasUsers">
+        <mat-table [dataSource]="users" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="fullName" class="overfflow-auto">
+            <mat-header-cell *matHeaderCellDef>Ime I Prezime</mat-header-cell>
+            <mat-cell *matCellDef="let user"  class="primary-color-on-website pointer" (click)='OpenDialog("Ime i Prezime", user.fullName)'>{{ shortenString(user.fullName)}}...</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+            <mat-cell *matCellDef="let user" class="primary-color-on-website pointer" (click)='OpenDialog("Email", user.email)'>{{shortenString(user.email)}}...</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef>Telefon</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.phone }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="role">
+            <mat-header-cell *matHeaderCellDef>Uloga</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ wirteRole(user) }}</mat-cell>
+        </ng-container>
+
+
+        
+        <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"></mat-header-cell>
+            <mat-cell *matCellDef="let user">
+            <button mat-icon-button color="primary" class="w-100" (click)="updateUserDialog(user)">
+                <mat-icon>Izmeni</mat-icon>
+            </button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="delete" >
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"></mat-header-cell>
+            <mat-cell *matCellDef="let user">
+            <button mat-icon-button color="warn" class="w-100" (click)="deleteUserDialog(user)">
+                Obriši
+                <!-- <mat-icon>delete</mat-icon> -->
+            </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        </mat-table>
+
+    </ng-container>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

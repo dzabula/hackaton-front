@@ -1,0 +1,20 @@
+<section id="edit" class="py-2 z-999">
+    <h2 class="text-center pb-2">Kreiraj Novi Grad</h2>
+    <form [formGroup]="insertCityForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+        <mat-form-field>
+        <mat-label>Naziv</mat-label>
+          <input matInput  formControlName="name" required>
+        </mat-form-field>
+      </div>
+         
+      <div class="form-buttons buttons">
+            <button mat-raised-button color="light" class="margin-right-50 bg-success color-white " type="submit" [disabled]="insertCityForm.invalid">Kreiraj</button>
+            <button mat-raised-button color="warn" type="button" (click)="close()">Odustani</button>  
+      </div>
+      <div class="form-row">
+        <p class="color-red">{{insertError}}</p>
+      </div>
+    </form>
+    </section>

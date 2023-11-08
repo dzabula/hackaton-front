@@ -1,0 +1,19 @@
+.footer-{
+    background-color: var(--roze-krem2) !important;
+}
+.moto{
+    mix-blend-mode: plus-lighter;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.012em rgb(218, 148, 214);
+    filter: none;
+    font-size: 22px;
+    line-height: 1;
+    text-align: center;
+}
+@media (max-width: 992px) {
+    .moto{
+        text-align: center;
+        font-size: 29px;
+        filter:none !important;
+    }
+}

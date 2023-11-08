@@ -1,0 +1,33 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+  
+  .pagination__item {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    background-color: var(--alipes-base);
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination__item:hover {
+    background-color: var(--najjaca-roza);
+  }
+  
+  .pagination__item.active {
+    background-color: var(--najjaca-roza);
+    color: #fff;
+  }
+
+  .pagination > a{
+    font-size: 22px !important;
+  }
+  

@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "name":"Lux"
+    },
+    {
+        "id":2,
+        "name":"Economic"
+    },
+    {
+        "id":3,
+        "name":"Premium"
+    },
+    {
+        "id":4,
+        "name":"Klasik"
+    }
+]

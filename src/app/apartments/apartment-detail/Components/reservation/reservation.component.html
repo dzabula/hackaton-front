@@ -1,0 +1,109 @@
+<section id="edit" class="py-2">
+    <p class="text-center title">Unos datuma dolazak i odlazak</p>
+    
+    <form [formGroup]="reservationForm">
+        <div class="w-75 desc-reservation">
+        <p class=" px-2 ">* Apartman moze biti rezervisan nekim datumima. Datumi koji su vec rezervisani od strane drugih korisnika su onemoguceni.</p>
+        <p class=" px-2 ">* Apartman poseduje drugu cenu za vansezonske termine (od 10.10 do 01.05). Cena van sezone iznosi: {{secondPrice | MoneyFormat}} EUR. </p>
+        <ng-container *ngIf="currentApartment.specPrices.length > 0">
+            <p class=" px-2 ">* Odredjenim datumima cena apartmana moze biti povecana. A to su:</p>
+            <ng-container *ngFor="let spec of currentApartment.specPrices; let i = index">
+                <p class="pl-10 ">{{ spec.date | date: 'dd.MM.' }} - <span> {{spec.price}} EUR.</span></p>
+            </ng-container>
+
+        </ng-container>
+        </div>
+    
+        <div class="d-flex justify-content-center">
+            <div class="w-75">
+                <div class="form-row w-100">
+                    <mat-form-field class="w-100">
+                      <mat-label>Broji osoba:</mat-label>
+                      <mat-select placeholder="Broji osoba" formControlName="numPerson" [value]="defaultSelectedNumPerson" [(ngModel)]="selectedNumPerson" (selectionChange)="calculatePrice()" >
+                        <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <mat-form-field class="w-100">
+                    <mat-label>Check In:</mat-label>
+                    <input  matInput [matDatepicker]="dateStartPicker" [(ngModel)]="dateStart" [min]="minDate" formControlName="dateStart"
+                            (dateChange)="onDateStartChange()" formControlName="dateStart"
+                            [matDatepickerFilter]="filterUnavailableDates"/>
+                    <mat-datepicker-toggle matSuffix [for]="dateStartPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dateStartPicker></mat-datepicker>
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Check Out:</mat-label>
+                    <input  matInput [matDatepicker]="dateEndPicker" [(ngModel)]="dateEnd"
+                            [min]="minEndDate" formControlName="dateEnd" (dateChange)="calculatePrice()"  formControlName="dateEnd"
+                            [matDatepickerFilter]="filterUnavailableDates"/>
+                    <mat-datepicker-toggle matSuffix [for]="dateEndPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dateEndPicker></mat-datepicker>
+                </mat-form-field>
+                <p *ngIf="displayErrorAboutDate" class="color-red">Check Out mora biti veci od  Check In!!!</p>
+
+                <br>
+                <ng-container *ngIf="!isLogedInUser">
+                    <mat-form-field class="w-100">
+                        <mat-label>Ime i prezime</mat-label>
+                        <input matInput [(ngModel)]="fullName" name="fullName" formControlName="fullName" required/>
+                        <mat-error *ngIf="reservationForm.get('fullName')?.hasError('required')">
+                           Ime i prezime je obavezno polje!
+                        </mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field class="w-100">
+                        <mat-label>Kontakt Email</mat-label>
+                        <input matInput  [(ngModel)]="email" formControlName="email"  required/>
+                        <mat-error *ngIf="reservationForm.get('email')?.hasError('required')">
+                            Email je obavezan podatak!
+                         </mat-error>
+                         <mat-error *ngIf="reservationForm.get('email')?.hasError('email')">
+                            Email mora biti u formatu npr. tekst@tekst.domen!
+                         </mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field class="w-100">
+                        <mat-label>Kontakt telefon</mat-label>
+                        <input matInput  [(ngModel)]="phone" formControlName="phone"  name="phone" required/>
+                        <mat-error *ngIf="reservationForm.get('phone')?.hasError('required')">
+                            Telefon je obavezan podatak!
+                         </mat-error>
+                         <mat-error *ngIf="reservationForm.get('phone')?.hasError('pattern')">
+                            Telefon mora biti u formatu npr. +38112345678, 0611357233 
+                         </mat-error>
+                    </mat-form-field>
+                    <br>
+                </ng-container>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center btn color-jaca-roza" *ngIf="sumPrice !== null && !displayErrorAboutDate" >Ukupna cena rezervacije je: {{ sumPrice | MoneyFormat }} eur.</p>
+                </div>
+                <div class="d-flex justify-content-center w-100 ">
+                    <button class="button-bg-color-1 bg-color-secondary color-white" mat-button  (click)="submit()">
+                        Rezervisi
+                    </button>
+                </div>
+                <p *ngIf="isLoading">Ucitavanje...</p>
+                <br>
+                <ul class="reservation-info pl-0-mobile">
+                    <li>U apartman je moguće uči najranije u podne u 12:00</li>
+                    <li>Apartman se napušta zadnjeg dana u 10:00h pre podneva.</li>
+                    <li>Rezervacija će glasiti na vaše ime i prezime.</li>
+                    <li>Naš operater će vas kontaktirati na vaš broj telefona radi potvrde rezervacije.</li>
+                    <li>Naplata se vrši prilikom dolaska u apartman.</li>
+                    <li>Rezervaciju je moguće otkazati u bilo kom trenutku.</li>
+                    <li>Sve Vaše rezervacije možete pogledati u sekciji "Rezervacije" u navigacionom meniu.</li>
+                
+                </ul>
+            </div>
+        </div>    
+    </form>
+</section>

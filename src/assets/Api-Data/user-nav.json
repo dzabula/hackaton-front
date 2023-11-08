@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Pocetna",
+        "link":"/"
+    },
+    {
+        "name":"Svi apartmani",
+        "link":"/apartments"
+    },
+    {
+        "name":"Kontakt",
+        "link":"/contact"
+    },
+    {
+        "name":"O nama",
+        "link":"/aboutus"
+    },
+    {
+        "name":"Moje Rezervacije",
+        "link":"/reservations"
+    },
+    {
+        "name":"Log Out",
+        "link":"/logout"
+    }
+]

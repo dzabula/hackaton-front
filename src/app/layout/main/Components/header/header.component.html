@@ -1,0 +1,20 @@
+
+
+    <header class="main-header moji-gradient sticky">
+        <div class="main-header__top ">
+            <app-header-top></app-header-top>
+        </div>
+        <nav class="main-menu">
+            <div class="main-menu__wrapper">
+                <div class="main-menu__wrapper-inner d-flex">
+                    <div class="main-menu__left col-4 col-sm-3 col-md-2  col-lg-1">
+                        <app-logo></app-logo>
+                    </div>
+                    <div class="col-3  col-md-6 offset-sm-3 offset-lg-0 col-lg-10 d-flex justify-content-end">
+                        <app-nav [activeRoute]="activeRoute" [links]="links"></app-nav>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+

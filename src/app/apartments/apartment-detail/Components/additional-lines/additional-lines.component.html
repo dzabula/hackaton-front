@@ -1,0 +1,15 @@
+<div class="apartment-details-one__content-box  mb-5">
+    <p class="apartment-details-one__text-1 description" [innerHTML]="description"></p>
+    
+    <ul class="list-unstyled apartment-details-one__points">
+        <li *ngFor="let item of lines">
+            <div class="icon">
+                <i class="fa fa-check"></i>
+            </div>
+            <div class="text">
+                <p class="mb-0">{{item}}</p>
+            </div>
+        </li>
+        
+    </ul>
+</div>

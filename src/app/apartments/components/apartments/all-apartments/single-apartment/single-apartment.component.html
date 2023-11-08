@@ -1,0 +1,45 @@
+
+    <div class="apartment-two__single cardd w-100">
+        <a routerLink="/apartments/{{data.id}}" class="w-100">
+            <div class="apartment-two__img w-100">
+                <div class="image-container fixed-width">
+                    <div class="image-content">
+                        <img decoding="async" class="img-of-card"
+                        [src]="data.file.path"
+                        alt="apartment-2-1" title="apartment-2-1">
+                    </div>
+                </div>
+
+                <div class="apartment-two__btn-box fixed-width right-0">
+                    <a class="thm-btn apartment-two__btn font-medium border-right" routerLink="/apartments/{{data.id}}">
+                        {{data.price.regularPrice | MoneyFormat}} &euro;
+                    </a>
+                    <a class="thm-btn apartment-two__btn font-medium" routerLink="/apartments/{{data.id}}">
+                        {{data.city.name}}
+                    </a>
+                </div>
+            </div>
+        </a>
+        <div class="apartment-two__content fixed-height">
+            <h3 class="apartment-two__title mb-12">
+                <a class="apartment-two__sub-title title" href="/apartments/{{data.id}}"> {{data.title}}</a>
+            </h3>
+            <p class="apartment-two__sub-title subtitle"> Kategorija: {{data.category.name}}</p>
+            <div class="row d-flex px-0" >
+                <div class="col-4 features-block thm-btn left-border ">
+                    <i class="fa-solid fa-user-group color-black"></i>
+                    <p class="features">{{data.minPerson}} - {{data.maxPerson}}</p>
+                </div>
+                <div class="col-4 features-block thm-btn">
+                    <i class="fa-solid fa-wifi color-black"></i>
+                    <p class="features"><i class="{{data.wifi ? 'fa fa-check' : 'fa fa-ban'}}"></i></p>
+                </div>
+                <div class="col-4 features-block thm-btn">
+                    <i class="fa-solid fa-stairs color-black"></i>
+                    <p class="features">{{data.floor}}</p>
+                </div>
+
+            </div>
+            <!-- <p class="apartment-two__sub-title font-price">{{data.price.regularPrice | MoneyFormat}} EUR.</p> -->
+        </div>
+    </div>

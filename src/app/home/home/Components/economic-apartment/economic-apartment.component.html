@@ -1,0 +1,62 @@
+<section class="apartment-one bg-krem2 pt-0">
+    <div class="economic_bg apartment-one__bg economic-container"></div>
+    <div class="container economic-container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline title-economic">Ekonomik Apartmani</span>
+            <h2 class="section-title__title color-white">Odaberite Po Vašoji Meri</h2>
+        </div>
+        <ng-container *ngIf="!loadingEconomicApartments">
+            <div class="gallery-one__carousel owl-carousel owl-theme thm-owl__carousel" data-owl-options='{
+                "loop": true,
+                "autoplay": true,
+                "margin": 20,
+                "nav": false,
+                "dots": false,
+                "smartSpeed": 500,
+                "autoplayTimeout": 5000,
+                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                "responsive": {
+                    "0": {
+                        "items": 1
+                    },
+                    "992": {
+                        "items": 3
+                    },
+                    "1292": {
+                        "items": 4
+                    },
+                    "3000": {
+                        "items": 5
+                    }
+                }
+            }'>
+            
+                
+                <div class="item" *ngFor="let apartmnet of economicApartments">
+                    <div class="gallery-one__single">
+                        <div class="gallery-one__img-box">
+                            <div class="gallery-one__img">
+                               <a routerLink="/apartments/{{apartmnet.id}}"> <img src="{{apartmnet.file.path}}" alt="{{apartmnet.title}}"></a>
+                            </div>
+                            <div class="gallery-one__content">
+                                <p class="gallery-one__sub-title font-22">{{apartmnet.price.pricePerNight}} RSD / {{apartmnet.price.pricePerNight | RsdToEur | currency:"EUR"}}</p>
+                                <!-- <h3 class="gallery-one__title"><a [routerLink]="['/apartments',apartmnet.Id]">{{apartmnet.title}}</a></h3> -->
+                                <h3 class="gallery-one__title"><a routerLink="/apartments/{{apartmnet.id}}">{{apartmnet.title}}</a></h3>
+                                <!-- Ne koristi se [routerLink] jer nakon povratka na prvobitnu stranicu dolazi do raspadnaja stranice -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            </div>
+        </ng-container>
+        <ng-container *ngIf="loadingEconomicApartments">
+            <div class="container d-flex justify-content-center">
+                <div class="alert">
+                    <div class="spinner" [@spin]></div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>

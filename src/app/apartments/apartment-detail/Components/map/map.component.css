@@ -1,0 +1,40 @@
+.section-map{
+    border-bottom: 1px solid #eeede5
+}
+h3{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: .0125em;
+    margin: 0 0 16px;
+    color:var(--alipes-black);
+}
+iframe{
+    width: 100% !important;
+    height: 600px;
+    border: none;
+}
+#iframe{
+    width: 100% !important;
+}
+.adress-title{
+    text-align: left;
+  color: var(--slaba-roza) !important;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.6em;
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 16px;
+}
+.adress-text{
+    font-size: 0.9em;
+    color:var(--alipes-black);
+}
+@media (max-width: 992px) {
+    iframe{
+        height: 350px;
+    }
+}

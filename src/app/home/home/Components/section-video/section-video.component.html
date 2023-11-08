@@ -1,0 +1,55 @@
+<section class="why-choose-one">
+    <div class="why-choose-one__bg" data-jarallax data-speed="0.2" data-imgPosition="50% 0%" style="background-image: url(/assets/images/gn0iQkFfFpzv.jpg);"></div>
+    <div class="why-choose-one__shape-2 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
+        <img src="/assets/images/zWo8MZFvuQ3i.png" alt>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="why-choose-one__left">
+                    <div class="why-choose-one__inner">
+                        <div class="why-choose-one__video-link">
+                            <a href="{{ytVideoLink}}" class="video-popup">
+                                <div class="why-choose-one__video-icon">
+                                    <span class="fa fa-play"></span>
+                                    <i class="ripple"></i>
+                                </div>
+                            </a>
+                            <div class="why-choose-one__shape-1 float-bob-x">
+                                <img src="/assets/images/huQXHdgs32RO.png" alt>
+                            </div>
+                        </div>
+                        <h3 class="why-choose-one__title">Zašto baš mi
+                            <br> pogledajte i uverite se i sami</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="why-choose-one__right">
+                    <div class="why-choose-one__points-box">
+                        <ul class="why-choose-one__points-list list-unstyled">
+                            <li *ngFor="let item of LinesOne">
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-0">{{item}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="margin-left-mobile-0 why-choose-one__points-list why-choose-one__points-list-2 list-unstyled">
+                            <li *ngFor="let item of LinesTwo">
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-0">{{item}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

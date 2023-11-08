@@ -1,0 +1,20 @@
+a,p,h1,h2,h4,h6,span{
+    color: var(--alipes-black) !important;
+}
+h3,h5{
+    color:var(--najjaca-roza) !important;
+}
+.title{
+    font-size: 22px !important;
+
+}
+.description{
+    font-size: 17px ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.apartment-details-one__content-box{
+    margin-bottom: 25px !important;
+    padding-bottom: 25px !important;
+}

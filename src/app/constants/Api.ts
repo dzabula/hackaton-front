@@ -1,0 +1,20 @@
+export const API = {
+    BANNERS :"banners.json",
+    CATEGORIES :"category",
+    CITIES:"city",
+    APARTMENTS:"Apartment",
+    NAV:"nav.json",
+    USERNAV:"user-nav.json",
+    ADMINNAV:"admin-nav.json",
+    EMPLOYE:"employes.json",
+    LOGIN:"User",
+    SPECIFICATIONS:"Specification",
+    USERS:"User",
+    REFRESHTOKEN:"user/refreshtoken",
+    COMMENT:"comment",
+    RESERVATION:"Reservation",
+    EMAIL:"Email",
+    USECASE:"UserUseCase",
+    RATES:"Rate",
+    ROOMS:"Room"
+}

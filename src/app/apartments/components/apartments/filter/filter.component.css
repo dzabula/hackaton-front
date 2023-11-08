@@ -1,0 +1,75 @@
+.filter-apartment-subtitle{
+    color: var(--alipes-black) !important;
+    font-size: 22px !important;
+    text-align: center !important;
+}
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #cd8c66;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.showNumberFoundApartments{
+  text-align: left;
+  font-size: 20px;
+  color:#cd8c66;
+
+}
+@media (max-width: 1024px) {
+  .filter-parent-block{
+    width: 90%;
+    margin:0 auto !important;
+  }
+  .filter-icon, .filter-icon-block{
+    font-size: 28px ;
+  }
+  .filter-icon-block{
+    margin-left: 20px !important;
+  
+  }
+}
+@media (max-width: 525px) {
+  .filter-icon-block{
+    margin-left: 0px !important;
+  }
+}
+.block-container {
+  display: none !important;
+  overflow: hidden !important;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+}
+
+.block-visible {
+  display: block !important;
+  opacity: 1 !important;
+}
+.filter-icon-block{
+  margin-left: 37px;
+
+}
+.filter-icon, .filter-icon-block>span{
+  font-size: 35px ;
+  color:#cd8c66;
+}
+.filter-icon{
+  cursor: pointer;
+  color: var(--jaka-roza);
+}
+
+.custom-input::-webkit-outer-spin-button,
+.custom-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.custom-input{
+  -moz-appearance: textfield;
+}

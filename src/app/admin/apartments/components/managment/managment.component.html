@@ -1,0 +1,120 @@
+<div class="table-container margin-top-150 ">
+    <div class="d-flex">
+        <h2 class="color-white">Apartmani</h2>
+        <button mat-button color="green" class="add-apartment color-white py-2" (click)="openCreateApartmentDialog()">
+            <!-- <mat-icon>delete</mat-icon> -->+ Apartman
+        </button>
+    </div>
+    <div class="w-100 mt-3  filter-form" >
+        <div class=" p-4 filter-form d-block">
+            <mat-form-field class="col-12 col-lg-8">
+              <mat-label>Po naslovu apartmana</mat-label>
+              <input matInput type="text" [(ngModel)]="apartmentKeyWord">
+            </mat-form-field>
+
+            <div class="col-12 col-lg-8 ">
+                <mat-form-field appearance="fill" class="d-block">
+                    <mat-label>Kategorija</mat-label>
+                    <mat-select [(ngModel)]="selectedCategories"  multiple>
+                        <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+            </div>
+            <div>
+                <button mat-button class="mt-4 col-3  primary-color-on-website color-white-bg bold" (click)="filtrate()">Primeni</button>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="!hasApartment && !loading">
+        <div class="container d-flex">
+            <div class="alert">
+                <h3 class="filter-apartment-subtitle">Nazalost trnutno nema trazenih apartmana</h3>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <div class="container d-flex justify-content-center">
+            <div class="alert">
+                <div class="spinner" [@spin]></div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="hasApartment && !loading" >
+        <mat-table [dataSource]="apartments" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="thumb">
+            <mat-header-cell *matHeaderCellDef>Slika</mat-header-cell>
+            <mat-cell *matCellDef="let apartman" (click)="updateApartmentDialog(apartman)"><img class="w-100 mx-auto pointer" [src]="apartman.file.path"/></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef>Naziv</mat-header-cell>
+            <mat-cell *matCellDef="let apartman"><a class="primary-color-on-website pointer text-center w-100 " routerLink="/apartments/{{apartman.id}}">{{shortenString(apartman.title)}}</a></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef>Opis</mat-header-cell>
+            <mat-cell *matCellDef="let apartman" (click)='openDialog("Opis",apartman.description)' class="primary-color-on-website pointer">{{shortenString(apartman.description)}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="pricePerNight">
+            <mat-header-cell *matHeaderCellDef>Cena leti</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{ apartman.price.pricePerNight }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="priceOnHoliday">
+            <mat-header-cell *matHeaderCellDef>Cena zimi</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{ apartman.price.priceOnHoliday }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="priceOnNewYear">
+            <mat-header-cell *matHeaderCellDef>Cena oko nove godine</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{ apartman.price.priceOnNewYear }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="category">
+            <mat-header-cell *matHeaderCellDef>Kategorija</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{ apartman.category.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef>Grad</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{ apartman.city.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="rate">
+            <mat-header-cell *matHeaderCellDef>Prosečna ocena</mat-header-cell>
+            <mat-cell *matCellDef="let apartman">{{avgRate(apartman.rates)}} ({{apartman.rates.length}} korisnika)</mat-cell>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="Edit">
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"></mat-header-cell>
+            <mat-cell *matCellDef="let apartman">
+            <button mat-icon-button color="primary" class="w-100" (click)="updateApartmentDialog(apartman)">
+                <mat-icon>Izmeni</mat-icon>
+            </button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Delete" >
+            <mat-header-cell *matHeaderCellDef class="w-100 text-center"></mat-header-cell>
+            <mat-cell *matCellDef="let apartman">
+            <button mat-icon-button color="warn" class="w-100" (click)="deleteApartmentDialog(apartman)">
+                Obriši
+                <!-- <mat-icon>delete</mat-icon> -->
+            </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        </mat-table>
+
+    </ng-container>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

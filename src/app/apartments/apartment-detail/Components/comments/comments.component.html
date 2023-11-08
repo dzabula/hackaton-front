@@ -1,0 +1,76 @@
+
+<p class="comment-title mb-4">Komentari</p>
+<ng-container class="comment-one" *ngIf="comments.length > 0; else elseBlock">
+    
+    <ng-container  *ngFor="let item of comments; let i = index">
+        <div class="comment-one__single col-12 d-block mb-3 pb-0">
+            <div class="flexflex ">
+                <div class="col-10 comment-one__content">
+                    
+                    <h3>{{item.user.fullName}}
+                    
+                        <ng-container *ngIf="IsAsdminstrator(item.user)" > <span class="red-color">Administrator <i class="fa-solid fa-check"></i></span></ng-container>
+                    
+                    </h3>
+                    
+                    
+                    <p>{{item.text}}</p>
+                    
+                    <!--<a href="#" class="mx-5 thm-btn comment-one__btn">Reply</a>-->
+                </div>
+                <div class="col-1  ml-20 d-flex justify-content-center align-items-center">
+                    <div class="d-flex">
+                    
+                        <i class="fa-solid fa-reply comment-icon"  (click)="ToggleReplyForm(i)"></i>
+
+                        <ng-container *ngIf="item.user.id == appUser?.UserId">
+                            <i class="fa-solid fa-trash comment-icon" (click)="DeleteCommentDialog(item.id)"></i>
+                        </ng-container>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-1">
+                <p>{{WirteDate(item.createdAt)}}</p>
+            </div>
+            <div class="col-12 mt-1" >
+                <app-add-reply (replyAdded)="ReplyAddedEventMethod($event)" *ngIf="item.showReplyForm" [idApartment]="idApartment" [idParrent]="item.id"></app-add-reply>
+            </div>
+        </div>
+
+       
+         <ng-container  *ngIf="item.childs.length > 0">
+            <div class="pb-1">
+                <div class="col-10 offset-2 mt-1 comment-one__single d-block pb-0" *ngFor="let oneChild of item.childs; let i = index">
+                    <div class="d-flex">
+                        <div class="col-10  comment-one__content">
+
+                            <h4>{{oneChild.user.fullName}}
+                                <ng-container *ngIf="IsAsdminstrator(oneChild.user)" ><span class="red-color" >administrator <i class="fa-solid fa-check"></i></span></ng-container>
+                            </h4>
+                            <p>{{oneChild.text}}</p>
+                            
+                            <!--<a href="#" class="mx-5 thm-btn comment-one__btn">Reply</a>-->
+                        </div>
+                        <ng-container *ngIf="oneChild.user.id == appUser?.UserId">
+                            <div class="col-1  ml-20 d-flex justify-content-center align-items-center">
+                                <div class="d-flex">
+                                    <i class="fa-solid fa-trash comment-icon" (click)="DeleteCommentDialog(oneChild.id)"></i>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="col-12 mt-1">
+                        <p>{{WirteDate(oneChild.createdAt)}}</p>
+                    </div>
+                 
+                </div>
+            </div>
+        </ng-container>
+       
+
+    </ng-container>
+</ng-container>
+<ng-template #elseBlock class="mb-4">
+    <h3 class="warn text-center mb-5">Nije postavljen niti jedan komentar. Budite prvi koji će komentarisati!</h3>
+</ng-template>

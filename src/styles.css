@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.page-header-bg{
+    background-image: url("/assets/images/apartmani/coverAllApartmnet.jpg") !important;
+    background-size: cover;
+}
+.z-999{
+  z-index: 999;
+}
+.text-left{
+  text-align: left !important;
+}
+.booking-gray{
+  color:var(--booking-gray) !important;
+}
+.aplipes-black{
+  color:var(--alipes-black) !important;
+}
+.radius-50{
+  border-radius: 50%;
+}
+.color-strong{
+  color:var(--najjaca-roza) !important;
+}
+.moji-gradient{
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(227 187 206) 100%);
+}
+.moji-gradient-obrnuti{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(227 187 206) 100%);
+}
+/*SPINER*/
+.filter-apartment-subtitle{
+    color: rgb(237, 236, 236) !important;
+    font-size: 22px !important;
+    text-align: center !important;
+  }
+.spinner {
+width: 60px;
+height: 60px;
+border: 5px solid #f3f3f3;
+border-top: 5px solid #cb22d7 !important;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 20px auto;
+}
+/*END SPINER*/
+/*TEXT CATEGORIES*/
+.text-categories div div{
+  font-family: "Yanone Kaffeesatz" !important;
+  font-size: 40px;
+  text-align: center;
+}
+.text-categories .wrapper{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.text-categories div .shadoww{
+  font-size: 30px;
+}
+.text-categories div .letter{
+  transform: translateY(0%);
+  color: var(--jaka-roza);
+  transition: ease-out 0.7s !important;
+}
+.category-title{
+  font-family: "Yanone Kaffeesatz" !important;
+}
+/*END TEXT CATEGORIES*/
+/*PRELOADER*/
+.preloader__image{
+  background-size: contain !important;
+  height: 180px !important;
+  width: 180px !important;
+}
+/*END PRELOADER*/
+/*LEAFLET*/
+.popup-img{
+  border-radius: 25px !important;
+}
+.popup-title{
+  text-align: center !important;
+  font-size: 18px !important;
+  color:var(--jaka-roza) !important;
+}
+/*END LEAFLET*/
+/*MATERIALS*/
+.button-bg-color-1{
+  color: white !important;
+    background-color: #cb22d7 !important;
+}
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text{
+  color: #cb22d7 !important;
+}
+.mat-primary{
+  color: #cb22d7 !important;
+}
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full, .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-full{
+  color:#cb22d7 !important;
+}
+.mat-primary, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-full, .mat-primary, .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-full{
+  color: #cb22d7 !important;
+}
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full, .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-ful{
+  background-color: #cb22d7 !important;
+}
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label{
+  color: #cb22d7 !important;
+}
+.mat-mdc-select-arrow{
+  color:#cb22d7 !important;
+}
+.mdc-text-field--filled .mdc-line-ripple::after{
+  border-bottom-color: #cb22d7 !important;
+}
+.mdc-line-ripple::after{
+  border-bottom-color: #cb22d7 !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: white !important;
+}
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background{
+  background-color: var(--single-apartment-bg) !important;
+  border-color: var(--najjaca-roza) !important;
+}
+.mdc-checkbox .mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__checkmark {
+  color: var(--najjaca-roza) !important;
+}
+.mdc-checkbox .mdc-checkbox__native-control:focus:checked~.mdc-checkbox__ripple{
+  background-color: var(--slaba-roza) !important;
+}
+/*STARA BOJA JE #cd8c66*/
+/*END MATERIALS*/
+.icon-next, .carousel-control-next-icon,
+.icon-prev, .carousel-control-prev-icon{
+  background-color: var(--slaba-roza) !important;
+  border-radius: 50% !important;
+}
+.angular-editor-toolbar-set{
+  height: 30px !important;
+}
+.angular-editor-textarea{
+  max-height: 125px !important;
+  margin-bottom: 75px !important;
+}
+
+/*MAPA*/
+#map > .leaflet-pane > .leaflet-pane  > .leaflet-layer > div > img {
+  filter: grayscale(80%) !important;
+}
+.leaflet-popup-content {
+  width: 200px;
+}
+.popup-img{
+  /* margin-top: 30px;
+  margin-bottom: 30px; */
+}
+/*KRAJ MAPE*/

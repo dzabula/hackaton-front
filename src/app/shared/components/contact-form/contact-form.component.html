@@ -1,0 +1,29 @@
+<form [formGroup]="forma"  (ngSubmit)="submitedForm()" class="contact-one__form contact-one-validated">
+    <div class="row">
+        
+        <mat-form-field appearance="fill" class="mb-3">
+            <mat-label>Ime</mat-label>
+            <input matInput formControlName="name" placeholder="Unesite ime">
+            <mat-error *ngIf="forma.controls['name'].hasError('required')">Ime je obavezno polje</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill"  class="mb-3">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Unesite email">
+            <mat-error *ngIf="forma.controls['email'].hasError('required')">Email je obavezan</mat-error>
+            <mat-error *ngIf="forma.controls['email'].hasError('email')">Neispravan format email-a</mat-error>
+        </mat-form-field>
+
+    </div>
+    <div class="row">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Poruka</mat-label>
+                    <textarea matInput formControlName="message" placeholder="Unesite poruku"></textarea>
+                    <mat-error *ngIf="forma.controls['message'].hasError('required')">Poruka je obavezna</mat-error>
+                </mat-form-field>
+           
+            <button mat-raised-button class="button-bg-color-1 color-white mt-2" type="submit" [disabled]="forma.invalid">Pošalji</button>
+
+    </div>
+</form>
